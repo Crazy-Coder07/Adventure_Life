@@ -1,10 +1,10 @@
 import express from "express"
 import dotenv from "dotenv"
 import mongoose from "mongoose"
-import authRoute from "./routes/auth.js"
-import usersRoute from "./routes/users.js"
-import hotelsRoute from "./routes/hotels.js"
-import roomsRoute from "./routes/rooms.js"
+import authRoute from "./routes/authRoute.js"
+import usersRoute from "./routes/usersRoute.js"
+import hotelsRoute from "./routes/hotelsRoute.js"
+import roomsRoute from "./routes/roomsRoute.js"
 
 
 const app = express();
@@ -19,12 +19,13 @@ const connectDB = async () => {
 }
 
 // middlewares
+
 app.use(express.json());
+
 app.use("/api/auth",authRoute)
 app.use("/api/users",usersRoute)
 app.use("/api/hotels",hotelsRoute)
 app.use("/api/rooms",roomsRoute)
-
 
 app.use("/",(req,res)=>{
     res.send("Hello from home server side")
