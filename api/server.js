@@ -6,6 +6,7 @@ import usersRoute from "./routes/usersRoute.js"
 import hotelsRoute from "./routes/hotelsRoute.js"
 import roomsRoute from "./routes/roomsRoute.js"
 import cookieParser from "cookie-parser"
+import cors from "cors"
 
 const app = express();
 dotenv.config();
@@ -19,6 +20,7 @@ const connectDB = async () => {
 }
 
 // middlewares
+app.use(cors());
 app.use(cookieParser());
 app.use(express.json());
 
