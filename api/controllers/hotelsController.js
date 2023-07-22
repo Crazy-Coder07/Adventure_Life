@@ -42,7 +42,7 @@ export const getHotel = async (req, res, next) => {
   }
 };
 
-export const getAllHotel = async (req, res, next) => {
+export const getHotels = async (req, res, next) => {
     try {
         const hotel = await Hotel.find();
         res.status(200).json(hotel);
